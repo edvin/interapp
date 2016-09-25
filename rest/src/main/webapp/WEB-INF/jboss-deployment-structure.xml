@@ -1,0 +1,7 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="deployment.common.jar"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

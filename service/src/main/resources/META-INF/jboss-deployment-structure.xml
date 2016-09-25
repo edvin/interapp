@@ -1,0 +1,8 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="deployment.common.jar"/>
+            <module name="javax.persistence.api"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

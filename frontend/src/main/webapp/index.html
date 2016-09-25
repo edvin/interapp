@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Frontend</title>
+</head>
+<body>
+    <h1>Web Frontend</h1>
+
+    <p>This module is a plain HTML5 project that talks to the Rest endpoint over http. This minimal implementation
+    simply lists all customers and has no interactive parts.</p>
+
+    <ul id="customers">
+
+    </ul>
+
+    <script>
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                var customers = document.getElementById("customers");
+                JSON.parse(request.responseText).forEach(function (customer) {
+                    var li = document.createElement("li");
+                    li.appendChild(document.createTextNode(customer.name));
+                    customers.appendChild(li);
+                });
+            }
+        };
+        request.open('GET', '/rest/customer', true);
+        request.send();
+    </script>
+</body>
+</html>
